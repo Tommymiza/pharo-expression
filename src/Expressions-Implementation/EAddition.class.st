@@ -19,6 +19,13 @@ EAddition >> left: anExp [
 	left := anExp
 ]
 
+{ #category : 'arithmetic' }
+EAddition >> negated [
+	right:= ENegation new expression: right.
+	left:= ENegation new expression: left.
+	^self
+]
+
 { #category : 'accessing' }
 EAddition >> right: anExp [ 
 	right:= anExp
