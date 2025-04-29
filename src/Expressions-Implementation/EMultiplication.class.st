@@ -22,8 +22,7 @@ EMultiplication class >> left: anExp [
 { #category : 'arithmetic' }
 EMultiplication class >> negated [
 
-	right := ENegation new expression: right.
-	^ self
+	^ ENegation new expression: self
 ]
 
 { #category : 'accessing' }
