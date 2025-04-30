@@ -8,6 +8,12 @@ Class {
 	#package : 'Expressions-Implementation'
 }
 
+{ #category : 'visiting' }
+EConstant >> accept: aVisitor [
+
+	^ aVisitor visitConstant: self
+]
+
 { #category : 'public access' }
 EConstant >> evaluate [
 	^ value
@@ -17,6 +23,11 @@ EConstant >> evaluate [
 EConstant >> negated [
 
 	^ ENegation new expression: self
+]
+
+{ #category : 'accessing' }
+EConstant >> value [
+	^ value
 ]
 
 { #category : 'accessing' }

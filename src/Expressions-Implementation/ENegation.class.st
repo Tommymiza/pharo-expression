@@ -8,10 +8,20 @@ Class {
 	#package : 'Expressions-Implementation'
 }
 
+{ #category : 'visiting' }
+ENegation >> accept: aVisitor [
+	^ aVisitor visitNegation: self
+]
+
 { #category : 'public access' }
 ENegation >> evaluate [
 
 	^ (expression evaluate) negated
+]
+
+{ #category : 'accessing' }
+ENegation >> expression [
+	^ expression
 ]
 
 { #category : 'instance creation' }

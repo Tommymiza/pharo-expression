@@ -9,9 +9,20 @@ Class {
 	#package : 'Expressions-Implementation'
 }
 
+{ #category : 'visiting' }
+EAddition >> accept: aVisitor [ 
+	^aVisitor visitAddition: self.
+]
+
 { #category : 'public access' }
 EAddition >> evaluate [
 	^ (left evaluate) + (right evaluate)
+]
+
+{ #category : 'accessing' }
+EAddition >> left [
+
+	^ left
 ]
 
 { #category : 'accessing' }
@@ -24,6 +35,12 @@ EAddition >> negated [
 
 	
 	^ ENegation new expression: self
+]
+
+{ #category : 'accessing' }
+EAddition >> right [
+
+	^ right
 ]
 
 { #category : 'accessing' }

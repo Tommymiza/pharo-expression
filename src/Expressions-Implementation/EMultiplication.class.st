@@ -1,6 +1,10 @@
 Class {
 	#name : 'EMultiplication',
 	#superclass : 'Object',
+	#instVars : [
+		'left',
+		'right'
+	],
 	#classInstVars : [
 		'left',
 		'right'
@@ -28,4 +32,33 @@ EMultiplication class >> negated [
 { #category : 'accessing' }
 EMultiplication class >> right: anExp [ 
 	right:= anExp
+]
+
+{ #category : 'visiting' }
+EMultiplication >> accept: aVisitor [ 
+	^ aVisitor visitMultiplication: self
+]
+
+{ #category : 'accessing' }
+EMultiplication >> left [
+
+	^ left
+]
+
+{ #category : 'accessing' }
+EMultiplication >> left: anObject [
+
+	left := anObject
+]
+
+{ #category : 'accessing' }
+EMultiplication >> right [
+
+	^ right
+]
+
+{ #category : 'accessing' }
+EMultiplication >> right: anObject [
+
+	right := anObject
 ]
